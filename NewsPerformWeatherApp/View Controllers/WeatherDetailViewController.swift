@@ -16,7 +16,7 @@ class WeatherDetailViewController: UIViewController {
     var humidity: String
     var temp: String
     var feelsLike: String
-    var lastUpdated: String
+    var lastUpdated: Double
     
     let weatherDetailView = WeatherDetailView()
     
@@ -26,7 +26,7 @@ class WeatherDetailViewController: UIViewController {
          humidity: String,
          temp: String,
          feelsLike: String,
-         lastUpdated: String
+         lastUpdated: Double
     ){
         self.regionName = regionName
         self.weatherCondition = weatherCondition
@@ -71,7 +71,7 @@ class WeatherDetailViewController: UIViewController {
         weatherDetailView.humidityLabelValue.text = humidity
         weatherDetailView.windLabel.text = "Wind"
         weatherDetailView.windLabelValue.text = wind
-        weatherDetailView.lastUpdatedLabel.text = "Last updated: \(lastUpdated)"
+        weatherDetailView.lastUpdatedLabel.text = "Last updated: \(Helpers.formattedDate(lastUpdated))"
     }
 }
 

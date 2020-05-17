@@ -9,16 +9,29 @@
 import UIKit
 
 class WeatherListViewController: UITableViewController {
+    let dataService = DataService.shared
     
-    let regions: [Region] = [
-        .init(name: "Baumaris", country: Country(id: "123", name: "Australia"), weatherCondition: "Sunny", weatherWind: "ESE at 17kph", weatherHumidity: "65%", weatherTemp: "27", weatherFeelsLike: "34", weatherLastUpdated: "1401666605"),
-        .init(name: "Albany", country: Country(id: "123", name: "Australia"), weatherCondition: "clear", weatherWind: "West at 16kph", weatherHumidity: "91%", weatherTemp: "14", weatherFeelsLike: "14", weatherLastUpdated: "1399679406"),
-        .init(name: "Warwick", country: Country(id: "123", name: "United Kingdom"), weatherCondition: "Scattered Clouds", weatherWind: "WNW at 0kph", weatherHumidity: "93%", weatherTemp: "12", weatherFeelsLike: "15", weatherLastUpdated: "1409097295")]
+    var regions = [Region]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadData()
         self.title = "Weather"
         tableView.register(WeatherCell.self, forCellReuseIdentifier: "cell")
+    }
+    
+    func loadData() {
+        dataService.fetchData(completion: { result in
+            switch result {
+                case .success(_):
+                    self.regions = self.dataService.getRegions()
+                    self.tableView.reloadData()
+                case .failure(let reason):
+                    let alert = UIAlertController(title: "Error", message: "\(reason)", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                    self.present(alert, animated: true)
+            }
+        })
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -29,7 +42,7 @@ class WeatherListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! WeatherCell
         cell.accessoryType = .disclosureIndicator
         cell.titleLable.text = regions[indexPath.row].name
-        cell.subtitleLabel.text = regions[indexPath.row].weatherLastUpdated
+        cell.subtitleLabel.text = Helpers.formattedDate(regions[indexPath.row].weatherLastUpdated)
         cell.temperatureLabel.text = "\(regions[indexPath.row].weatherTemp)º"
         
         return cell
