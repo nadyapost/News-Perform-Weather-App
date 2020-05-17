@@ -23,16 +23,14 @@ class WeatherCell: UITableViewCell {
             let stack = UIStackView()
             stack.axis = .vertical
             stack.distribution = .fillProportionally
-            stack.addArrangedSubview(titleLable)
-            stack.addArrangedSubview(subtitleLabel)
+            stack.addArrangedSubviews([titleLable, subtitleLabel])
             return stack
         }()
         let hStack: UIStackView = {
             let stack = UIStackView()
             stack.axis = .horizontal
             stack.distribution = .equalCentering
-            stack.addArrangedSubview(vStack)
-            stack.addArrangedSubview(temperatureLabel)
+            stack.addArrangedSubviews([vStack, temperatureLabel])
             return stack
             
         }()

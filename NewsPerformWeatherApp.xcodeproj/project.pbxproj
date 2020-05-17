@@ -16,6 +16,7 @@
 		13AC5776246ECAD100A118C7 /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC5775246ECAD100A118C7 /* Region.swift */; };
 		13AC5778246FBBB100A118C7 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC5777246FBBB100A118C7 /* WeatherCell.swift */; };
 		13D268622470C53F006F5CD1 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D268612470C53F006F5CD1 /* Theme.swift */; };
+		13D268642470CFAA006F5CD1 /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D268632470CFAA006F5CD1 /* WeatherDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		13AC5775246ECAD100A118C7 /* Region.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		13AC5777246FBBB100A118C7 /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
 		13D268612470C53F006F5CD1 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		13D268632470CFAA006F5CD1 /* WeatherDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				13AC5761246EC81B00A118C7 /* AppDelegate.swift */,
 				13AC5763246EC81B00A118C7 /* SceneDelegate.swift */,
 				13AC5765246EC81B00A118C7 /* WeatherListViewController.swift */,
+				13D268632470CFAA006F5CD1 /* WeatherDetailViewController.swift */,
 				13AC5777246FBBB100A118C7 /* WeatherCell.swift */,
 				13AC5775246ECAD100A118C7 /* Region.swift */,
 				13D268612470C53F006F5CD1 /* Theme.swift */,
@@ -150,6 +153,7 @@
 				13AC5766246EC81B00A118C7 /* WeatherListViewController.swift in Sources */,
 				13AC5762246EC81B00A118C7 /* AppDelegate.swift in Sources */,
 				13AC5778246FBBB100A118C7 /* WeatherCell.swift in Sources */,
+				13D268642470CFAA006F5CD1 /* WeatherDetailViewController.swift in Sources */,
 				13D268622470C53F006F5CD1 /* Theme.swift in Sources */,
 				13AC5764246EC81B00A118C7 /* SceneDelegate.swift in Sources */,
 				13AC5776246ECAD100A118C7 /* Region.swift in Sources */,
