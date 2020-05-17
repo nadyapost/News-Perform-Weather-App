@@ -18,8 +18,6 @@ class WeatherListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Weather"
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.137254902, green: 0.2588235294, blue: 0.3333333333, alpha: 1)
         tableView.register(WeatherCell.self, forCellReuseIdentifier: "cell")
     }
 

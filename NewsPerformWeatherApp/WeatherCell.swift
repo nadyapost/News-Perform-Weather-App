@@ -45,12 +45,12 @@ class WeatherCell: UITableViewCell {
             hStack.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -30),
             hStack.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -20),
         ])
-        temperatureLabel.font = UIFont.boldSystemFont(ofSize: 50)
-        temperatureLabel.textColor = #colorLiteral(red: 0.6509803922, green: 0.9098039216, blue: 0.9176470588, alpha: 1)
-        titleLable.font = UIFont.systemFont(ofSize: 24, weight: .medium)
-        titleLable.textColor = #colorLiteral(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
-        subtitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .light)
-        subtitleLabel.textColor = #colorLiteral(red: 0.6, green: 0.6, blue: 0.6, alpha: 1)
+        temperatureLabel.font = Theme.Font.largeTitleLabel
+        temperatureLabel.textColor = Theme.Color.blueLabel
+        titleLable.font = Theme.Font.titleLabel
+        titleLable.textColor = Theme.Color.grayLabel
+        subtitleLabel.font = Theme.Font.subtitleLabel
+        subtitleLabel.textColor = Theme.Color.grayLabel
     }
     
     required init?(coder: NSCoder) {
