@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		13AC5762246EC81B00A118C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC5761246EC81B00A118C7 /* AppDelegate.swift */; };
 		13AC5764246EC81B00A118C7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC5763246EC81B00A118C7 /* SceneDelegate.swift */; };
-		13AC5766246EC81B00A118C7 /* WeatherListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC5765246EC81B00A118C7 /* WeatherListViewController.swift */; };
+		13AC5766246EC81B00A118C7 /* RegionWeatherListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AC5765246EC81B00A118C7 /* RegionWeatherListViewController.swift */; };
 		13AC5769246EC81B00A118C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13AC5767246EC81B00A118C7 /* Main.storyboard */; };
 		13AC576B246EC81F00A118C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13AC576A246EC81F00A118C7 /* Assets.xcassets */; };
 		13AC576E246EC81F00A118C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13AC576C246EC81F00A118C7 /* LaunchScreen.storyboard */; };
@@ -20,14 +20,16 @@
 		13D2686A24713541006F5CD1 /* WeatherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D2686924713541006F5CD1 /* WeatherDetailView.swift */; };
 		13D2686C247139DF006F5CD1 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D2686B247139DF006F5CD1 /* DataService.swift */; };
 		13D2686E24715C38006F5CD1 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D2686D24715C38006F5CD1 /* Helpers.swift */; };
-		13D2687124720F70006F5CD1 /* UIStackView extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D2687024720F70006F5CD1 /* UIStackView extention.swift */; };
+		13D2687124720F70006F5CD1 /* UIStackView+AddSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D2687024720F70006F5CD1 /* UIStackView+AddSubviews.swift */; };
+		13D2687324728718006F5CD1 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D2687224728718006F5CD1 /* CountryListViewController.swift */; };
+		13D2687524728DA5006F5CD1 /* UIImageVIew+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D2687424728DA5006F5CD1 /* UIImageVIew+Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		13AC575E246EC81B00A118C7 /* NewsPerformWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsPerformWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13AC5761246EC81B00A118C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		13AC5763246EC81B00A118C7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		13AC5765246EC81B00A118C7 /* WeatherListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewController.swift; sourceTree = "<group>"; };
+		13AC5765246EC81B00A118C7 /* RegionWeatherListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionWeatherListViewController.swift; sourceTree = "<group>"; };
 		13AC5768246EC81B00A118C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		13AC576A246EC81F00A118C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13AC576D246EC81F00A118C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,7 +41,9 @@
 		13D2686924713541006F5CD1 /* WeatherDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailView.swift; sourceTree = "<group>"; };
 		13D2686B247139DF006F5CD1 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		13D2686D24715C38006F5CD1 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		13D2687024720F70006F5CD1 /* UIStackView extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView extention.swift"; sourceTree = "<group>"; };
+		13D2687024720F70006F5CD1 /* UIStackView+AddSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+AddSubviews.swift"; sourceTree = "<group>"; };
+		13D2687224728718006F5CD1 /* CountryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
+		13D2687424728DA5006F5CD1 /* UIImageVIew+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageVIew+Color.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,8 +94,9 @@
 		13D2686524712FE0006F5CD1 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				13AC5765246EC81B00A118C7 /* WeatherListViewController.swift */,
+				13AC5765246EC81B00A118C7 /* RegionWeatherListViewController.swift */,
 				13D268632470CFAA006F5CD1 /* WeatherDetailViewController.swift */,
+				13D2687224728718006F5CD1 /* CountryListViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -107,9 +112,10 @@
 		13D268672471300A006F5CD1 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				13D2686D24715C38006F5CD1 /* Helpers.swift */,
-				13D2687024720F70006F5CD1 /* UIStackView extention.swift */,
 				13D268612470C53F006F5CD1 /* Theme.swift */,
+				13D2686D24715C38006F5CD1 /* Helpers.swift */,
+				13D2687024720F70006F5CD1 /* UIStackView+AddSubviews.swift */,
+				13D2687424728DA5006F5CD1 /* UIImageVIew+Color.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -203,14 +209,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				13D2686A24713541006F5CD1 /* WeatherDetailView.swift in Sources */,
-				13AC5766246EC81B00A118C7 /* WeatherListViewController.swift in Sources */,
+				13D2687324728718006F5CD1 /* CountryListViewController.swift in Sources */,
+				13AC5766246EC81B00A118C7 /* RegionWeatherListViewController.swift in Sources */,
 				13D2686C247139DF006F5CD1 /* DataService.swift in Sources */,
 				13D2686E24715C38006F5CD1 /* Helpers.swift in Sources */,
 				13AC5762246EC81B00A118C7 /* AppDelegate.swift in Sources */,
 				13AC5778246FBBB100A118C7 /* WeatherCell.swift in Sources */,
 				13D268642470CFAA006F5CD1 /* WeatherDetailViewController.swift in Sources */,
+				13D2687524728DA5006F5CD1 /* UIImageVIew+Color.swift in Sources */,
 				13D268622470C53F006F5CD1 /* Theme.swift in Sources */,
-				13D2687124720F70006F5CD1 /* UIStackView extention.swift in Sources */,
+				13D2687124720F70006F5CD1 /* UIStackView+AddSubviews.swift in Sources */,
 				13AC5764246EC81B00A118C7 /* SceneDelegate.swift in Sources */,
 				13AC5776246ECAD100A118C7 /* Response.swift in Sources */,
 			);

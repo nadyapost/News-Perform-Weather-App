@@ -49,7 +49,7 @@ class DataService {
     }
     
     func getCountries() -> [Country] {
-        return Array(Set(data.map { $0.country }))
+        return Array(Set(data.map { $0.country })).sorted(by: {$0.name < $1.name})
     }
     
     func sortedRegionsByDate() -> [Region]  {
@@ -67,7 +67,6 @@ class DataService {
             $0.name < $1.name
         })
     }
-    
     func getRegions() -> [Region] {
         return sortedByAlpha()
     }
