@@ -44,7 +44,7 @@ class WeatherDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Weather Details"
+        self.title = "Weather details"
         self.view.backgroundColor = .white
         setupView()
         setupTitles()

@@ -28,12 +28,14 @@ class WeatherListViewController: UITableViewController {
         self.title = "Weather"
         tableView.register(WeatherCell.self, forCellReuseIdentifier: "cell")
         tableView.refreshControl = refresher
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sort", style: .plain, target: self, action: #selector(sortTapped))
+        navigationItem.rightBarButtonItem?.tintColor = Theme.Color.blueLabel
     }
     
     @objc func refresh(_ sender: Any) {
        loadData()
     }
-    
+    // MARK: - Load Data 
     func loadData() {
         dataService.fetchData(completion: { result in
             switch result {
@@ -51,7 +53,30 @@ class WeatherListViewController: UITableViewController {
             }
         })
     }
-
+    // MARK: - Sorting
+    
+    @objc func sortTapped() {
+        let alert = UIAlertController(title: "Sort by", message: "", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "A-Z", style: .default, handler: { _ in
+            print ("Sort by A-Z")
+            self.regions = self.dataService.sortedByAlpha()
+            self.tableView.reloadData()
+        }))
+        alert.addAction(UIAlertAction(title: "Last updated", style: .default, handler: { _ in
+            print ("Sort by Last updated")
+            self.regions = self.dataService.sortedRegionsByDate()
+            self.tableView.reloadData()
+        }))
+        alert.addAction(UIAlertAction(title: "Temperature", style: .default, handler: { _ in
+            print ("Sort by Temperature")
+            self.regions = self.dataService.sortedByTemp()
+            self.tableView.reloadData()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alert, animated: true)
+    }
+   // MARK: - Data Source
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return regions.count
     }
@@ -65,6 +90,9 @@ class WeatherListViewController: UITableViewController {
         
         return cell
     }
+    
+    // MARK: - Navigation
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller =  WeatherDetailViewController(
             regionName: regions[indexPath.row].name,

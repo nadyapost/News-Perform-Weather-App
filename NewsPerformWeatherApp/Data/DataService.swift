@@ -69,7 +69,7 @@ class DataService {
     }
     
     func getRegions() -> [Region] {
-        return sortedRegionsByDate()
+        return sortedByAlpha()
     }
     func getRegions(for countryId: String) -> [Region] {
         return data.filter({ $0.country.id == countryId })

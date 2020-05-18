@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let rootViewController = UINavigationController(rootViewController: WeatherListViewController())
         self.window?.rootViewController = rootViewController
         self.window?.makeKeyAndVisible()
-
+        self.window?.tintColor = Theme.Color.grayLabel
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
