@@ -59,7 +59,7 @@ class DataService {
     }
     func sortedByTemp() -> [Region] {
         return data.sorted(by: {
-            $0.weatherTemp > $1.weatherTemp
+            ($0.weatherTemp as NSString).integerValue > ($1.weatherTemp as NSString).integerValue
         })
     }
     func sortedByAlpha() -> [Region] {
