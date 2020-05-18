@@ -13,7 +13,7 @@ class RegionWeatherListViewController: UITableViewController {
     
     var regions = [Region]()
     
-    let countryID: String?
+    let country: Country?
     
     lazy var refresher: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -24,8 +24,8 @@ class RegionWeatherListViewController: UITableViewController {
         return refreshControl
     }()
     
-    init(for countryID: String? = nil) {
-        self.countryID = countryID
+    init(for country: Country? = nil) {
+        self.country = country
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -36,15 +36,19 @@ class RegionWeatherListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
-        self.title = "Weather"
-        tableView.register(WeatherCell.self, forCellReuseIdentifier: "cell")
         tableView.refreshControl = refresher
-        if countryID == nil {
+        setupNavigationBar()
+    }
+    func setupNavigationBar() {
+        if country == nil {
+            self.title = "Weather"
             navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sort", style: .plain, target: self, action: #selector(sortTapped))
             navigationItem.rightBarButtonItem?.tintColor = Theme.Color.blueLabel
             navigationItem.leftBarButtonItem = UIBarButtonItem(title: "All Countries", style: .plain, target: self, action: #selector(allCountriesTapped))
             navigationItem.leftBarButtonItem?.tintColor = Theme.Color.blueLabel
         } else {
+            guard let country = self.country else { return }
+            self.title = country.name
             navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(backTapped))
             navigationItem.leftBarButtonItem?.tintColor = Theme.Color.blueLabel
         }
@@ -53,14 +57,15 @@ class RegionWeatherListViewController: UITableViewController {
     @objc func refresh(_ sender: Any) {
        loadData()
     }
-    // MARK: - Load Data 
+    // MARK: - Load Data
+    
     func loadData() {
         dataService.fetchData(completion: { result in
             switch result {
             case .success(_):
-                if self.countryID != nil {
-                    guard let countryID = self.countryID else { return }
-                    self.regions = self.dataService.getRegions(for: countryID)
+                if self.country != nil {
+                    guard let country = self.country else { return }
+                    self.regions = self.dataService.getRegions(for: country.id)
                     self.tableView.reloadData()
                 } else {
                     self.regions = self.dataService.getRegions()
@@ -100,6 +105,7 @@ class RegionWeatherListViewController: UITableViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(alert, animated: true)
     }
+    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -107,7 +113,7 @@ class RegionWeatherListViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! WeatherCell
+        let cell: WeatherCell = tableView.dequeueOrCreateCell()
         cell.titleLable.text = regions[indexPath.row].name
         cell.subtitleLabel.text = Helpers.formattedDate(regions[indexPath.row].weatherLastUpdated)
         cell.temperatureLabel.text = "\(regions[indexPath.row].weatherTemp)º"

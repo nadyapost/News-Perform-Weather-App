@@ -15,7 +15,6 @@ class CountryListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(WeatherCell.self, forCellReuseIdentifier: "cell")
         loadData()
         title = "Countries"
         tableView.rowHeight = 58
@@ -43,7 +42,7 @@ class CountryListViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueOrCreateCell()
         let disclosureIndicator = UIImageView(image: UIImage(named: "disclosureIndicator"))
         disclosureIndicator.setImageColor(color: Theme.Color.blueLabel)
         
@@ -54,10 +53,9 @@ class CountryListViewController: UITableViewController {
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let countryId = countries[indexPath.row].id
-        let controller =  RegionWeatherListViewController(for: countryId)
+        let country = countries[indexPath.row]
+        let controller =  RegionWeatherListViewController(for: country)
         navigationController?.pushViewController(controller, animated: true)
     }
 }
-
 

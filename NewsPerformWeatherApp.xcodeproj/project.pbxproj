@@ -23,6 +23,7 @@
 		13D2687124720F70006F5CD1 /* UIStackView+AddSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D2687024720F70006F5CD1 /* UIStackView+AddSubviews.swift */; };
 		13D2687324728718006F5CD1 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D2687224728718006F5CD1 /* CountryListViewController.swift */; };
 		13D2687524728DA5006F5CD1 /* UIImageVIew+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D2687424728DA5006F5CD1 /* UIImageVIew+Color.swift */; };
+		13D2687724729F1C006F5CD1 /* UITableView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D2687624729F1C006F5CD1 /* UITableView+Dequeue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		13D2687024720F70006F5CD1 /* UIStackView+AddSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+AddSubviews.swift"; sourceTree = "<group>"; };
 		13D2687224728718006F5CD1 /* CountryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
 		13D2687424728DA5006F5CD1 /* UIImageVIew+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageVIew+Color.swift"; sourceTree = "<group>"; };
+		13D2687624729F1C006F5CD1 /* UITableView+Dequeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeue.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,8 +116,7 @@
 			children = (
 				13D268612470C53F006F5CD1 /* Theme.swift */,
 				13D2686D24715C38006F5CD1 /* Helpers.swift */,
-				13D2687024720F70006F5CD1 /* UIStackView+AddSubviews.swift */,
-				13D2687424728DA5006F5CD1 /* UIImageVIew+Color.swift */,
+				13D2687824729F57006F5CD1 /* Extensions */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -135,6 +136,16 @@
 				13D2686B247139DF006F5CD1 /* DataService.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		13D2687824729F57006F5CD1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				13D2687024720F70006F5CD1 /* UIStackView+AddSubviews.swift */,
+				13D2687424728DA5006F5CD1 /* UIImageVIew+Color.swift */,
+				13D2687624729F1C006F5CD1 /* UITableView+Dequeue.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +223,7 @@
 				13D2687324728718006F5CD1 /* CountryListViewController.swift in Sources */,
 				13AC5766246EC81B00A118C7 /* RegionWeatherListViewController.swift in Sources */,
 				13D2686C247139DF006F5CD1 /* DataService.swift in Sources */,
+				13D2687724729F1C006F5CD1 /* UITableView+Dequeue.swift in Sources */,
 				13D2686E24715C38006F5CD1 /* Helpers.swift in Sources */,
 				13AC5762246EC81B00A118C7 /* AppDelegate.swift in Sources */,
 				13AC5778246FBBB100A118C7 /* WeatherCell.swift in Sources */,
