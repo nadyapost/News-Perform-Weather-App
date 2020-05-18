@@ -20,6 +20,7 @@
 		13D2686A24713541006F5CD1 /* WeatherDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D2686924713541006F5CD1 /* WeatherDetailView.swift */; };
 		13D2686C247139DF006F5CD1 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D2686B247139DF006F5CD1 /* DataService.swift */; };
 		13D2686E24715C38006F5CD1 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D2686D24715C38006F5CD1 /* Helpers.swift */; };
+		13D2687124720F70006F5CD1 /* UIStackView extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D2687024720F70006F5CD1 /* UIStackView extention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		13D2686924713541006F5CD1 /* WeatherDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailView.swift; sourceTree = "<group>"; };
 		13D2686B247139DF006F5CD1 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		13D2686D24715C38006F5CD1 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		13D2687024720F70006F5CD1 /* UIStackView extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView extention.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				13D2686D24715C38006F5CD1 /* Helpers.swift */,
+				13D2687024720F70006F5CD1 /* UIStackView extention.swift */,
 				13D268612470C53F006F5CD1 /* Theme.swift */,
 			);
 			path = Shared;
@@ -207,6 +210,7 @@
 				13AC5778246FBBB100A118C7 /* WeatherCell.swift in Sources */,
 				13D268642470CFAA006F5CD1 /* WeatherDetailViewController.swift in Sources */,
 				13D268622470C53F006F5CD1 /* Theme.swift in Sources */,
+				13D2687124720F70006F5CD1 /* UIStackView extention.swift in Sources */,
 				13AC5764246EC81B00A118C7 /* SceneDelegate.swift in Sources */,
 				13AC5776246ECAD100A118C7 /* Response.swift in Sources */,
 			);

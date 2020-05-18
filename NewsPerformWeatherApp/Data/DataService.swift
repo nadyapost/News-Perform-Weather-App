@@ -40,19 +40,12 @@ class DataService {
                 DispatchQueue.main.async {
                     completion(.success(self.data))
                 }
-                
             } catch {
                 DispatchQueue.main.async {
-                    print(error)
                     completion(.failure(error.localizedDescription as! Error))
                 }
-                
-                
-                print("JSON error: \(error.localizedDescription)")
             }
-            
         }.resume()
-        
     }
     
     func getCountries() -> [Country] {

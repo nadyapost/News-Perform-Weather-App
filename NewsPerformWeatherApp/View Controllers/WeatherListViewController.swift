@@ -12,24 +12,42 @@ class WeatherListViewController: UITableViewController {
     let dataService = DataService.shared
     
     var regions = [Region]()
+    
+    lazy var refresher: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        let attributes = [NSAttributedString.Key.foregroundColor: Theme.Color.grayLabel]
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching Weather Data ...", attributes: attributes)
+        refreshControl.tintColor = Theme.Color.blueLabel
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        return refreshControl
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
         self.title = "Weather"
         tableView.register(WeatherCell.self, forCellReuseIdentifier: "cell")
+        tableView.refreshControl = refresher
+    }
+    
+    @objc func refresh(_ sender: Any) {
+       loadData()
     }
     
     func loadData() {
         dataService.fetchData(completion: { result in
             switch result {
-                case .success(_):
-                    self.regions = self.dataService.getRegions()
-                    self.tableView.reloadData()
-                case .failure(let reason):
-                    let alert = UIAlertController(title: "Error", message: "\(reason)", preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-                    self.present(alert, animated: true)
+            case .success(_):
+                self.regions = self.dataService.getRegions()
+                self.tableView.reloadData()
+                let deadline = DispatchTime.now() + .milliseconds(700)
+                DispatchQueue.main.asyncAfter(deadline: deadline) {
+                    self.refresher.endRefreshing()
+                }
+            case .failure(let reason):
+                let alert = UIAlertController(title: "Error", message: "\(reason)", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
             }
         })
     }
@@ -58,8 +76,6 @@ class WeatherListViewController: UITableViewController {
             lastUpdated: regions[indexPath.row].weatherLastUpdated
         )
         navigationController?.pushViewController(controller, animated: true)
-        
     }
-    
 }
 

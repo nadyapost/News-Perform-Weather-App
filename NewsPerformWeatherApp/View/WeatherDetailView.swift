@@ -134,13 +134,4 @@ class WeatherDetailView: UIView {
         lastUpdatedLabel.font = Theme.Font.thinSubtitleLabel
         lastUpdatedLabel.textColor = Theme.Color.grayLabel
     }
-    
-}
-
-extension UIStackView {
-    func addArrangedSubviews(_ views: [UIView]) {
-        for view in views {
-            addArrangedSubview(view)
-        }
-    }
 }
